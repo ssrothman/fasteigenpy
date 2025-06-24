@@ -1,27 +1,9 @@
-#include <pybind11/pybind11.h>
+#include "fasteigenpy/cod.hpp"
 
-int add(int i, int j) { return i + j; }
-
-namespace py = pybind11;
+// Eigen row-major matrix type
+using MatrixXdR = Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor>;
 
 PYBIND11_MODULE(_core, m) {
-  m.doc() = R"pbdoc(
-      Pybind11 example plugin
-      -----------------------
-      .. currentmodule:: python_example
-      .. autosummary::
-         :toctree: _generate
-         add
-         subtract
-  )pbdoc";
-
-  m.def("add", &add, R"pbdoc(
-      Add two numbers
-      Some other explanation about the add function.
-  )pbdoc");
-
-  m.def("subtract", [](int i, int j) { return i - j; }, R"pbdoc(
-      Subtract two numbers
-      Some other explanation about the subtract function.
-  )pbdoc");
+    wrap_cod<Eigen::MatrixXd>(m, "CompleteOrthogonalDecomposition");
+    wrap_cod<MatrixXdR>(m, "CompleteOrthogonalDecompositionRowMajor");
 }
