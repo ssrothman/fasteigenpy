@@ -128,6 +128,9 @@ void wrap_cod(py::module& m, const std::string& name){
         .def(py::init<const Eigen::Ref<const InputType>&>())
         .def(py::init<const Eigen::Index&, const Eigen::Index&>(),
              py::arg("rows"), py::arg("cols"))
+        .def("info", &THECOD::info)
+        .def("compute", &THECOD::compute,
+             py::arg("input"))
         .def("matrixQTZ", &THECOD::matrixQTZ,
              py::return_value_policy::reference_internal)
         .def("matrixT", &THECOD::matrixT,

@@ -8,6 +8,11 @@ from __future__ import annotations
 
 from ._version import version as __version__
 
-from ._core import CompleteOrthogonalDecomposition
+from ._core import CompleteOrthogonalDecomposition, LLT, LDLT
+from ._core import CompleteOrthogonalDecompositionRowMajor, LLTRowMajor, LDLTRowMajor
+from ._core import ComputationInfo
 
-__all__ = ["__version__", "CompleteOrthogonalDecomposition"]
+__all__ = ["__version__", 
+           "CompleteOrthogonalDecomposition", "LLT", "LDLT",
+           "CompleteOrthogonalDecompositionRowMajor", "LLTRowMajor", "LDLTRowMajor",
+           "ComputationInfo"]
