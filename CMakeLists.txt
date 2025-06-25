@@ -37,6 +37,7 @@ else()
     target_link_options(_core PRIVATE $<TARGET_PROPERTY:BLAS::BLAS_LINKER_FLAGS>)
     target_link_options(_core PRIVATE $<TARGET_PROPERTY:LAPACK::LAPACK_LINKER_FLAGS>)
     target_compile_definitions(_core PUBLIC EIGEN_USE_BLAS=1 EIGEN_USE_LAPACKE=1) # use blas and lapack
+endif()
 
 #specify the C++ standard
 set_target_properties(_core PROPERTIES CXX_STANDARD 17 CXX_STANDARD_REQUIRED ON)
