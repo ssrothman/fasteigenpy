@@ -1,5 +1,5 @@
 import eigenpy as eigen
-import fasteigenpy._core as fasteigen
+import fasteigenpy as fasteigen
 
 from time import time
 

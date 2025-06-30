@@ -2,6 +2,7 @@
 #include "fasteigenpy/cod.hpp"
 #include "fasteigenpy/llt.hpp"
 #include "fasteigenpy/ldlt.hpp"
+#include "fasteigenpy/selfadjointeigensolver.hpp"
 
 // Eigen row-major matrix type
 using MatrixXdR = Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor>;
@@ -17,4 +18,7 @@ PYBIND11_MODULE(_core, m) {
 
     wrap_ldlt<Eigen::MatrixXd>(m, "LDLT");
     wrap_ldlt<MatrixXdR>(m, "LDLTRowMajor");
+
+    wrap_selfadjoineigensolver<Eigen::MatrixXd>(m, "SelfAdjointEigenSolver");
+    wrap_selfadjoineigensolver<MatrixXdR>(m, "SelfAdjointEigenSolverRowMajor");
 }

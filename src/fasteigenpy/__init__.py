@@ -11,8 +11,10 @@ from ._version import version as __version__
 from ._core import CompleteOrthogonalDecomposition, LLT, LDLT
 from ._core import CompleteOrthogonalDecompositionRowMajor, LLTRowMajor, LDLTRowMajor
 from ._core import ComputationInfo
+from ._core import SelfAdjointEigenSolver, SelfAdjointEigenSolverRowMajor
 
 __all__ = ["__version__", 
            "CompleteOrthogonalDecomposition", "LLT", "LDLT",
            "CompleteOrthogonalDecompositionRowMajor", "LLTRowMajor", "LDLTRowMajor",
-           "ComputationInfo"]
+           "ComputationInfo",
+           "SelfAdjointEigenSolver", "SelfAdjointEigenSolverRowMajor"]
