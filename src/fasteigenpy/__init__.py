@@ -3,8 +3,11 @@ Copyright (c) 2025 Simon Rothman. All rights reserved.
 
 fasteigenpy: Python bindings for Eigen, accelerated as much as possible with compiler optimizations, blas/lapacke, etc
 """
-
 from __future__ import annotations
+
+import sys
+if 'torch' in sys.modules:
+    raise ImportError("fasteigenpy must be imported before torch to avoid conflicts in the eigen backend.")
 
 from ._version import version as __version__
 
